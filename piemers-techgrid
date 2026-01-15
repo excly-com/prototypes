@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="lv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skropstu Akadēmija - Design V2 (Bold Split)</title>
+    <meta name="description" content="Profesionālas skropstu pieaudzēšanas apmācības un kursi.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        anthracite: '#1a1a1a',
+                        offwhite: '#f4f4f4',
+                        vibrantorange: '#f37021',
+                        glass: 'rgba(26, 26, 26, 0.7)'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Abril Fatface', 'cursive']
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1631214524020-7e18db9a8f92')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        /* Hide scrollbar for gallery */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-anthracite text-offwhite font-sans antialiased">
+    <!-- Navigation (Side/Top Hybrid) -->
+    <nav class="fixed w-full z-50 top-0 left-0 glass-nav">
+        <div class="px-8 h-24 flex items-center justify-between">
+            <a href="#" class="font-serif text-3xl italic tracking-wide">
+                Skropstu<span class="text-vibrantorange not-italic font-bold">.</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-12 text-sm font-bold tracking-widest uppercase">
+                <a href="#kursi" class="hover:text-vibrantorange transition-colors duration-300">Kursi</a>
+                <a href="#veikals" class="hover:text-vibrantorange transition-colors duration-300">Veikals</a>
+                <a href="#instruktore" class="hover:text-vibrantorange transition-colors duration-300">Instruktore</a>
+            </div>
+            <a href="#pieteikties"
+                class="hidden md:inline-flex items-center justify-center px-8 py-3 bg-vibrantorange text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+                Pieteikties
+            </a>
+            <button class="md:hidden text-offwhite hover:text-vibrantorange">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-anthracite z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8 md:hidden">
+        <button id="close-menu" class="absolute top-8 right-6 text-white hover:text-vibrantorange">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="#kursi" class="text-4xl font-serif italic text-white hover:text-vibrantorange transition-colors"
+            onclick="toggleMenu()">Kursi</a>
+        <a href="#veikals" class="text-4xl font-serif italic text-white hover:text-vibrantorange transition-colors"
+            onclick="toggleMenu()">Veikals</a>
+        <a href="#instruktore" class="text-4xl font-serif italic text-white hover:text-vibrantorange transition-colors"
+            onclick="toggleMenu()">Instruktore</a>
+    </div>
+    <!-- Hero Section (Split Screen) -->
+    <header class="relative h-screen w-full flex flex-col md:flex-row pt-24">
+        <!-- Text Side -->
+        <div class="w-full md:w-1/2 h-full flex flex-col justify-center px-8 md:px-20 border-r border-white/5">
+            <h1 class="font-serif text-6xl md:text-8xl leading-none mb-8">
+                Meistara <br />
+                <span class="text-vibrantorange">Līmenis.</span>
+            </h1>
+            <p class="text-gray-400 text-lg font-light tracking-wide mb-12 max-w-md">
+                Apgūsti skropstu pieaudzēšanas mākslu 2 mēnešos.
+                <br />Profesionāla sertifikācija un karjera.
+            </p>
+            <div class="flex items-center space-x-4">
+                <a href="#kursi"
+                    class="px-8 py-4 bg-white text-black text-sm font-bold tracking-widest uppercase hover:bg-vibrantorange hover:text-white transition-colors">
+                    Sākt
+                </a>
+                <div class="h-px w-12 bg-white/20"></div>
+                <span class="text-xs uppercase tracking-widest text-gray-500">Skrollēt zemāk</span>
+            </div>
+        </div>
+        <!-- Image Side -->
+        <div class="w-full md:w-1/2 h-full relative">
+            <div class="absolute inset-0 bg-vibrantorange/10 mix-blend-overlay z-10"></div>
+            <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?q=80&w=2000&auto=format&fit=crop"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+        </div>
+    </header>
+    <!-- Stats Section -->
+    <section class="border-y border-white/5 bg-black py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <span class="block text-4xl font-serif text-vibrantorange mb-2">500+</span>
+                <span class="text-xs uppercase tracking-widest text-gray-500">Absolventu</span>
+            </div>
+            <div>
+                <span class="block text-4xl font-serif text-vibrantorange mb-2">10+</span>
+                <span class="text-xs uppercase tracking-widest text-gray-500">Gadu Pieredze</span>
+            </div>
+            <div>
+                <span class="block text-4xl font-serif text-vibrantorange mb-2">100%</span>
+                <span class="text-xs uppercase tracking-widest text-gray-500">Prakse</span>
+            </div>
+            <div>
+                <span class="block text-4xl font-serif text-vibrantorange mb-2">24/7</span>
+                <span class="text-xs uppercase tracking-widest text-gray-500">Atbalsts</span>
+            </div>
+        </div>
+    </section>
+    <!-- Course Section (Z-Pattern) -->
+    <section id="kursi" class="py-0 border-b border-white/5">
+        <!-- Row 1 -->
+        <div class="grid md:grid-cols-2">
+            <div class="p-12 md:p-24 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5">
+                <span class="text-vibrantorange text-xs font-bold uppercase tracking-widest mb-4">01. Teorija</span>
+                <h2 class="font-serif text-4xl mb-6">Fundamentālas Zināšanas</h2>
+                <p class="text-gray-400 font-light leading-relaxed mb-8">
+                    Padziļināta anatomija, acu formas analīze un materiālu ķīmija. Mēs iemācām ne tikai "kā", bet arī
+                    "kāpēc".
+                </p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>• Higiēna un drošība</li>
+                    <li>• Modelēšanas shēmas</li>
+                    <li>• Klientu psiholoģija</li>
+                </ul>
+            </div>
+            <div class="h-[500px] md:h-auto relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=800&auto=format&fit=crop"
+                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="grid md:grid-cols-2">
+            <div class="h-[500px] md:h-auto relative overflow-hidden group order-2 md:order-1">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
+                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div
+                class="p-12 md:p-24 flex flex-col justify-center border-t md:border-t-0 md:border-l border-white/5 order-1 md:order-2">
+                <span class="text-vibrantorange text-xs font-bold uppercase tracking-widest mb-4">02. Prakse</span>
+                <h2 class="font-serif text-4xl mb-6">Darbs ar Modeļiem</h2>
+                <p class="text-gray-400 font-light leading-relaxed mb-8">
+                    80% no kursa laika ir veltīts praktiskajam darbam. Tu strādāsi ar dzīviem modeļiem instruktora
+                    uzraudzībā.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>• Klasika 1:1</li>
+                    <li>• Volume 2D-5D</li>
+                    <li>• Korekcija un noņemšana</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Horizontal Scroll -->
+    <section id="veikals" class="py-24 overflow-hidden">
+        <div class="px-8 mb-12 flex justify-between items-end">
+            <h2 class="font-serif text-5xl">Veikals</h2>
+            <a href="#" class="text-vibrantorange hover:text-white transition-colors">Skatīt Visu -></a>
+        </div>
+        <!-- Scrolling Container -->
+        <div class="flex overflow-x-auto space-x-8 px-8 pb-8 hide-scroll snap-x snap-mandatory">
+            <!-- Product 1 -->
+            <div class="min-w-[300px] snap-center group">
+                <div class="h-[400px] bg-white/5 mb-6 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <button
+                        class="absolute bottom-0 w-full bg-vibrantorange text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform font-bold uppercase text-xs tracking-widest">
+                        Pievienot Grozam
+                    </button>
+                </div>
+                <h3 class="font-serif text-xl italic">Līme Ultra</h3>
+                <p class="text-gray-500">€24.99</p>
+            </div>
+            <!-- Product 2 -->
+            <div class="min-w-[300px] snap-center group">
+                <div class="h-[400px] bg-white/5 mb-6 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <button
+                        class="absolute bottom-0 w-full bg-vibrantorange text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform font-bold uppercase text-xs tracking-widest">
+                        Pievienot Grozam
+                    </button>
+                </div>
+                <h3 class="font-serif text-xl italic">Palete Mix</h3>
+                <p class="text-gray-500">€18.50</p>
+            </div>
+            <!-- Product 3 -->
+            <div class="min-w-[300px] snap-center group">
+                <div class="h-[400px] bg-white/5 mb-6 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1620331309609-e850e0f8546b?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <button
+                        class="absolute bottom-0 w-full bg-vibrantorange text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform font-bold uppercase text-xs tracking-widest">
+                        Pievienot Grozam
+                    </button>
+                </div>
+                <h3 class="font-serif text-xl italic">Pincete V-Type</h3>
+                <p class="text-gray-500">€15.00</p>
+            </div>
+            <!-- Product 4 -->
+            <div class="min-w-[300px] snap-center group">
+                <div class="h-[400px] bg-white/5 mb-6 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1599450371680-77a82c448d3c?q=80&w=1956&auto=format&fit=crop"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <button
+                        class="absolute bottom-0 w-full bg-vibrantorange text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform font-bold uppercase text-xs tracking-widest">
+                        Pievienot Grozam
+                    </button>
+                </div>
+                <h3 class="font-serif text-xl italic">Starta Komplekts</h3>
+                <p class="text-gray-500">€85.00</p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Big -->
+    <footer class="bg-black py-24 border-t border-white/10">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="font-serif text-6xl md:text-8xl mb-12 text-white/10 select-none">SKROPSTU</h2>
+            <div class="grid md:grid-cols-3 gap-12 text-sm text-gray-400 mb-16">
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-4">Adrese</h4>
+                    <p>Rīga, Brīvības 123</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-4">Kontakti</h4>
+                    <p>info@skropstu.lv</p>
+                    <p>+371 20000000</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-4">Socials</h4>
+                    <p>Instagram</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+            <p class="text-xs text-gray-600">&copy; 2024 Skropstu Akadēmija. Bold Concept.</p>
+        </div>
+    </footer>
+    <!-- JS for Menu -->
+    <script>
+        const menuBtn = document.querySelector('button.md\\:hidden');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+        if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

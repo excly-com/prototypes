@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="lv" class="scroll-smooth bg-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skropstu Akadēmija - Design V3 (Editorial Grid)</title>
+    <meta name="description" content="Profesionālas skropstu pieaudzēšanas apmācības un kursi.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Manrope:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        anthracite: '#111111',
+                        offwhite: '#eeeeee',
+                        vibrantorange: '#f37021',
+                        'grid-line': 'rgba(255, 255, 255, 0.1)'
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif']
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1631214524020-7e18db9a8f92')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+        @media (max-width: 1024px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .border-r-grid {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .border-b-grid {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-anthracite text-offwhite font-sans antialiased selection:bg-vibrantorange selection:text-black">
+    <div class="grid-layout">
+        <!-- Sticky Sidebar Navigation -->
+        <aside
+            class="hidden lg:flex flex-col justify-between h-screen sticky top-0 bg-anthracite border-r-grid p-8 z-50">
+            <div>
+                <a href="#" class="block font-serif text-3xl italic mb-16 hover:text-vibrantorange transition-colors">
+                    S.<span class="text-vibrantorange">Akadēmija</span>
+                </a>
+                <nav class="space-y-6">
+                    <a href="#sakums"
+                        class="block text-sm uppercase tracking-widest hover:text-vibrantorange transition-colors">Sākums</a>
+                    <a href="#kursi"
+                        class="block text-sm uppercase tracking-widest hover:text-vibrantorange transition-colors">Kursi</a>
+                    <a href="#veikals"
+                        class="block text-sm uppercase tracking-widest hover:text-vibrantorange transition-colors">Veikals</a>
+                    <a href="#portfolion"
+                        class="block text-sm uppercase tracking-widest hover:text-vibrantorange transition-colors">Portfolio</a>
+                </nav>
+            </div>
+            <div class="space-y-4">
+                <a href="#pieteikties"
+                    class="block text-center border border-white/20 py-3 text-xs uppercase tracking-widest hover:bg-vibrantorange hover:border-vibrantorange hover:text-white transition-all">
+                    Pieteikties
+                </a>
+                <div class="flex justify-between text-xs text-gray-500">
+                    <span>IG</span>
+                    <span>FB</span>
+                    <span>WA</span>
+                </div>
+            </div>
+        </aside>
+        <!-- Mobile Header -->
+        <div class="lg:hidden flex items-center justify-between p-6 border-b-grid bg-anthracite sticky top-0 z-50">
+            <a href="#" class="font-serif text-2xl italic">S.Akadēmija</a>
+            <button class="text-white">HM</button>
+        </div>
+        <!-- Main Content Area -->
+        <main class="relative bg-anthracite">
+            <!-- Hero Grid -->
+            <section id="sakums" class="min-h-screen grid grid-rows-[1fr_auto]">
+                <div class="grid md:grid-cols-2 h-full border-b-grid">
+                    <!-- Hero Text -->
+                    <div
+                        class="p-8 md:p-16 flex flex-col justify-end border-b-grid md:border-b-0 md:border-r-grid relative">
+                        <span
+                            class="absolute top-8 left-8 text-vibrantorange text-xs uppercase tracking-widest font-bold">EST.
+                            2014</span>
+                        <h1 class="font-serif text-6xl xl:text-8xl leading-none mb-8">
+                            Māksla<br>
+                            <span class="italic text-gray-500">Tavās</span><br>
+                            Rokās
+                        </h1>
+                        <p class="max-w-md text-gray-400 font-light mb-8">
+                            Ekskluzīvas skropstu pieaudzēšanas apmācības Rīgas centrā.
+                        </p>
+                    </div>
+                    <!-- Hero Image -->
+                    <div class="relative h-[50vh] md:h-full">
+                        <div class="absolute inset-0 bg-anthracite/20 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover grayscale">
+                        <div class="absolute bottom-8 right-8 z-20">
+                            <div
+                                class="w-24 h-24 rounded-full border border-vibrantorange/50 flex items-center justify-center animate-spin-slow">
+                                <span class="text-[10px] uppercase tracking-widest text-vibrantorange">Scroll</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Marquee Strip -->
+                <div class="bg-vibrantorange text-black py-3 border-b-grid overflow-hidden">
+                    <div class="marquee-container">
+                        <div class="marquee-content font-bold uppercase tracking-widest text-sm">
+                            Jaunā grupa startē 15. februārī +++ Piesakies tagad un saņem starta komplektu +++
+                            Sertificētas apmācības +++ International Certificate +++
+                            Jaunā grupa startē 15. februārī +++ Piesakies tagad un saņem starta komplektu +++
+                            Sertificētas apmācības +++ International Certificate +++
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Grid Content: Courses -->
+            <section id="kursi">
+                <div class="grid md:grid-cols-3 border-b-grid">
+                    <!-- Header Cell -->
+                    <div class="p-8 md:p-12 border-b-grid md:border-b-0 md:border-r-grid flex items-center bg-white/5">
+                        <h2 class="font-serif text-4xl">Mūsu<br><span
+                                class="text-vibrantorange italic">Meistarklases</span></h2>
+                    </div>
+                    <!-- Course 1 -->
+                    <div
+                        class="p-8 md:p-12 border-b-grid md:border-b-0 md:border-r-grid hover:bg-white/5 transition-colors group cursor-pointer">
+                        <span class="text-xs text-gray-500 uppercase tracking-widest mb-4 block">01 / Iesācējiem</span>
+                        <h3 class="font-serif text-2xl mb-4 group-hover:text-vibrantorange transition-colors">Bāzes
+                            Kurss</h3>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            No nulles līdz meistaram. Teorija, prakse uz manekena un 4 dzīviem modeļiem.
+                        </p>
+                        <span class="text-vibrantorange text-xs border-b border-vibrantorange pb-1">Uzzināt
+                            Vairāk</span>
+                    </div>
+                    <!-- Course 2 -->
+                    <div class="p-8 md:p-12 hover:bg-white/5 transition-colors group cursor-pointer">
+                        <span class="text-xs text-gray-500 uppercase tracking-widest mb-4 block">02 / Meistariem</span>
+                        <h3 class="font-serif text-2xl mb-4 group-hover:text-vibrantorange transition-colors">Volume
+                            Eksperts</h3>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Sarežģītas modelēšanas tehnikas. 2D-5D apjomi un Perfect Line efekts.
+                        </p>
+                        <span class="text-vibrantorange text-xs border-b border-vibrantorange pb-1">Uzzināt
+                            Vairāk</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Image Grid -->
+            <section class="grid md:grid-cols-2 border-b-grid h-[600px]">
+                <div class="relative group overflow-hidden border-b-grid md:border-b-0 md:border-r-grid">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="bg-white text-black px-4 py-2 text-xs uppercase font-bold tracking-widest">Skatīt
+                            Instruktori</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=800&auto=format&fit=crop"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="bg-white text-black px-4 py-2 text-xs uppercase font-bold tracking-widest">Apskatīt
+                            Telpas</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Shop List -->
+            <section id="veikals" class="p-8 md:p-16 border-b-grid">
+                <div class="flex justify-between items-end mb-12">
+                    <h2 class="font-serif text-4xl">Veikals</h2>
+                    <a href="#"
+                        class="text-xs uppercase tracking-widest border-b border-white hover:text-vibrantorange hover:border-vibrantorange transition-colors">Visi
+                        Produkti</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Product Items (Minimal) -->
+                    <div class="group">
+                        <div class="bg-white/5 aspect-square mb-4 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=800&auto=format&fit=crop"
+                                class="w-full h-full object-cover mix-blend-overlay opacity-50 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h4 class="text-sm font-bold uppercase">Līme Ultra</h4>
+                        <span class="text-gray-500 text-xs">€24.99</span>
+                    </div>
+                    <div class="group">
+                        <div class="bg-white/5 aspect-square mb-4 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop"
+                                class="w-full h-full object-cover mix-blend-overlay opacity-50 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h4 class="text-sm font-bold uppercase">Palete Mix</h4>
+                        <span class="text-gray-500 text-xs">€18.50</span>
+                    </div>
+                    <div class="group">
+                        <div class="bg-white/5 aspect-square mb-4 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1620331309609-e850e0f8546b?q=80&w=800&auto=format&fit=crop"
+                                class="w-full h-full object-cover mix-blend-overlay opacity-50 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h4 class="text-sm font-bold uppercase">Pincete V</h4>
+                        <span class="text-gray-500 text-xs">€15.00</span>
+                    </div>
+                    <div class="group">
+                        <div class="bg-white/5 aspect-square mb-4 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1599450371680-77a82c448d3c?q=80&w=1956&auto=format&fit=crop"
+                                class="w-full h-full object-cover mix-blend-overlay opacity-50 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h4 class="text-sm font-bold uppercase">Komplekts</h4>
+                        <span class="text-gray-500 text-xs">€85.00</span>
+                    </div>
+                </div>
+            </section>
+            <footer
+                class="p-8 md:p-16 flex justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
+                <span>&copy; 2024 Skropstu Akadēmija</span>
+                <span>Editorial Grid Layout</span>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

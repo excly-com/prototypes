@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="lv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skropstu Akadēmija - Design V4 (Immersive Glow)</title>
+    <meta name="description" content="Profesionālas skropstu pieaudzēšanas apmācības un kursi.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700&family=Playfair+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: '#121212',
+                        accent: '#f37021',
+                        'accent-glow': 'rgba(243, 112, 33, 0.4)'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(243, 112, 33, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(243, 112, 33, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(243, 112, 33, 0.3);
+        }
+        .image-glow {
+            box-shadow: 0 20px 40px -10px rgba(243, 112, 33, 0.2);
+        }
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-white font-sans antialiased overflow-x-hidden">
+    <!-- Navbar Floating -->
+    <nav class="fixed w-full z-50 top-6 px-4">
+        <div
+            class="max-w-xl mx-auto glass-card rounded-full px-8 py-4 flex items-center justify-between shadow-2xl shadow-accent/10">
+            <a href="#" class="font-serif italic text-xl tracking-wide">
+                <span class="text-accent">S</span>.Akadēmija
+            </a>
+            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-widest uppercase text-gray-400">
+                <a href="#kursi" class="hover:text-white transition-colors">Kursi</a>
+                <a href="#veikals" class="hover:text-white transition-colors">Veikals</a>
+            </div>
+            <a href="#pieteikties"
+                class="text-xs font-bold text-accent uppercase tracking-widest hover:text-white transition-colors">
+                Pieteikties
+            </a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center relative px-6 pt-20">
+        <!-- Floating Orb Backgrounds -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/20 rounded-full blur-[100px] floating"
+            style="animation-delay: 0s;"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[120px] floating"
+            style="animation-delay: -3s;"></div>
+        <div class="relative z-10 text-center max-w-4xl">
+            <h2 class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-6 reveal">Professional Lash Training
+            </h2>
+            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-tight mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 reveal text-glow"
+                style="transition-delay: 0.1s;">
+                Master<br>The Art
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl font-light mb-12 max-w-xl mx-auto reveal"
+                style="transition-delay: 0.2s;">
+                Pievienojies elites meistaru klubam. <br>2 mēnešu intensīva programma tavai karjerai.
+            </p>
+            <a href="#kursi" class="inline-block relative group reveal" style="transition-delay: 0.3s;">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-accent to-orange-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200">
+                </div>
+                <button
+                    class="relative px-8 py-4 bg-black rounded-full leading-none flex items-center space-x-4 border border-white/10 group-hover:border-accent/50 transition-colors">
+                    <span class="text-sm font-bold uppercase tracking-widest">Sākt Apmācības</span>
+                    <span class="text-accent">→</span>
+                </button>
+            </a>
+        </div>
+    </header>
+    <!-- Cards Section (Courses) -->
+    <section id="kursi" class="py-32 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-serif mb-16 text-center reveal">Izvēlies Savu Ceļu</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Course Card 1 -->
+                <div
+                    class="glass-card rounded-3xl p-8 md:p-12 hover:border-accent/30 transition-colors duration-500 group reveal">
+                    <div class="h-64 mb-8 overflow-hidden rounded-2xl relative">
+                        <div
+                            class="absolute inset-0 bg-accent/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="text-accent text-xs font-bold uppercase tracking-widest border border-accent/20 px-3 py-1 rounded-full">Iesācējiem</span>
+                        <span class="text-white/50 text-sm">2 Mēneši</span>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4">Bāzes Kurss</h3>
+                    <p class="text-gray-400 font-light mb-8 line-clamp-3">
+                        Pilna apmācība no teorijas līdz praksei. Iemācies visu nepieciešamo, lai sāktu strādāt uzreiz.
+                    </p>
+                    <a href="#"
+                        class="text-white border-b border-accent/50 pb-1 hover:text-accent transition-colors text-sm uppercase tracking-widest">Uzzināt
+                        Vairāk</a>
+                </div>
+                <!-- Course Card 2 -->
+                <div class="glass-card rounded-3xl p-8 md:p-12 hover:border-accent/30 transition-colors duration-500 group reveal"
+                    style="transition-delay: 0.2s;">
+                    <div class="h-64 mb-8 overflow-hidden rounded-2xl relative">
+                        <div
+                            class="absolute inset-0 bg-accent/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="text-white text-xs font-bold uppercase tracking-widest border border-white/20 px-3 py-1 rounded-full">Meistariem</span>
+                        <span class="text-white/50 text-sm">1 Diena</span>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4">Volume Workshop</h3>
+                    <p class="text-gray-400 font-light mb-8 line-clamp-3">
+                        Uzlabo savu tehniku un ātrumu. Iemācies veidot perfektus pušķīšus un strādāt ar sarežģītām acīm.
+                    </p>
+                    <a href="#"
+                        class="text-white border-b border-accent/50 pb-1 hover:text-accent transition-colors text-sm uppercase tracking-widest">Uzzināt
+                        Vairāk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Parallax Image Break -->
+    <section class="h-[60vh] relative overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 bg-fixed bg-cover bg-center grayscale opacity-30"
+            style="background-image: url('https://images.unsplash.com/photo-1631214524020-7e18db9a8f92');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark"></div>
+        <div class="relative z-10 text-center reveal">
+            <p class="text-3xl md:text-5xl font-serif italic text-white/90 mb-4">"Kvalitāte ir detaļās"</p>
+            <p class="text-accent text-sm uppercase tracking-[0.4em]">Skropstu Akadēmija</p>
+        </div>
+    </section>
+    <!-- Shop Carousel (Floating) -->
+    <section id="veikals" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-serif mb-16 reveal">Top Produkti</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="group reveal" style="transition-delay: 0s;">
+                    <div
+                        class="aspect-[3/4] rounded-2xl bg-card relative overflow-hidden mb-4 border border-white/5 hover:border-accent/50 transition-colors">
+                        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button
+                                class="w-full bg-accent/90 backdrop-blur text-white text-xs font-bold py-3 rounded-xl transform translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
+                                €24.99 — PIEVIENOT
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-serif">Līme Ultra</h3>
+                </div>
+                <!-- Product 2 -->
+                <div class="group reveal" style="transition-delay: 0.1s;">
+                    <div
+                        class="aspect-[3/4] rounded-2xl bg-card relative overflow-hidden mb-4 border border-white/5 hover:border-accent/50 transition-colors">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button
+                                class="w-full bg-accent/90 backdrop-blur text-white text-xs font-bold py-3 rounded-xl transform translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
+                                €18.50 — PIEVIENOT
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-serif">Palete Mix</h3>
+                </div>
+                <!-- Product 3 -->
+                <div class="group reveal" style="transition-delay: 0.2s;">
+                    <div
+                        class="aspect-[3/4] rounded-2xl bg-card relative overflow-hidden mb-4 border border-white/5 hover:border-accent/50 transition-colors">
+                        <img src="https://images.unsplash.com/photo-1620331309609-e850e0f8546b?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button
+                                class="w-full bg-accent/90 backdrop-blur text-white text-xs font-bold py-3 rounded-xl transform translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
+                                €15.00 — PIEVIENOT
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-serif">Pincete V</h3>
+                </div>
+                <!-- Product 4 -->
+                <div class="group reveal" style="transition-delay: 0.3s;">
+                    <div
+                        class="aspect-[3/4] rounded-2xl bg-card relative overflow-hidden mb-4 border border-white/5 hover:border-accent/50 transition-colors">
+                        <img src="https://images.unsplash.com/photo-1599450371680-77a82c448d3c?q=80&w=1956&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button
+                                class="w-full bg-accent/90 backdrop-blur text-white text-xs font-bold py-3 rounded-xl transform translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
+                                €85.00 — PIEVIENOT
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-serif">Starta Komplekts</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-20 text-center relative overflow-hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
+        </div>
+        <p class="font-serif text-accent text-xl mb-4">S.Akadēmija</p>
+        <p class="text-gray-600 text-xs uppercase tracking-widest">&copy; 2024 Immersive Design</p>
+    </footer>
+    <!-- Reveal on Scroll Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+        });
+    </script>
+</body>
+</html>

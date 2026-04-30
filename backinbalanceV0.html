@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back in Balance | Fizioterapija un Ekipējums</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigācija -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold tracking-tighter text-slate-800 uppercase">Back in Balance</span>
+                <span class="text-[10px] tracking-widest uppercase text-slate-500">Fizioterapijas prakse</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider text-slate-600">
+                <a href="#fizioterapija" class="hover:text-blue-600 transition">Fizioterapija</a>
+                <a href="#ergox2" class="hover:text-blue-600 transition">Ergox2 Segli</a>
+                <a href="#agador" class="hover:text-blue-600 transition">Agador Trenzes</a>
+                <a href="#izglitiba" class="hover:text-blue-600 transition">Lekcijas</a>
+                <a href="#kontakti" class="hover:text-blue-600 transition">Kontakti</a>
+            </div>
+
+            <button class="md:hidden text-slate-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Sadaļa -->
+    <section class="relative h-screen flex items-center justify-center hero-gradient text-white pt-20">
+        <div class="text-center px-4 max-w-4xl">
+            <h1 class="text-5xl md:text-7xl mb-6">Līdzsvars kustībā.</h1>
+            <p class="text-xl md:text-2xl font-light mb-10 opacity-90 italic">Profesionāla fizioterapija jātniekiem un augstākās klases ekipējums harmoniskam sniegumam.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#fizioterapija" class="px-8 py-4 bg-white text-slate-900 rounded-full font-semibold hover:bg-slate-100 transition">Pieteikties vizītei</a>
+                <a href="#ergox2" class="px-8 py-4 border border-white rounded-full font-semibold hover:bg-white/10 transition">Apskatīt ekipējumu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Par Praksi / Statistika -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl mb-6">6 gadi, kas veltīti jātnieku labsajūtai</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        SIA "Back in Balance" nav tikai fizioterapijas prakse. Tā ir padziļināta izpratne par jātnieka un zirga biomehāniku. Pēdējo sešu gadu laikā mūsu galvenais fokuss ir bijis tieši jātnieku fiziskā sagatavotība un rehabilitācija.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 py-6">
+                        <div>
+                            <span class="block text-4xl font-bold text-blue-900">6+</span>
+                            <span class="text-sm text-slate-500 uppercase tracking-widest">Gadu pieredze</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-bold text-blue-900">100%</span>
+                            <span class="text-sm text-slate-500 uppercase tracking-widest">Individualitāte</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-100 rounded-2xl overflow-hidden aspect-video relative">
+                    <img src="https://images.unsplash.com/photo-1593452285195-2dfb9f3e6206?auto=format&fit=crop&w=1000&q=80" alt="Fizioterapijas seanss" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pakalpojumi -->
+    <section id="fizioterapija" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl mb-4">Mūsu Pakalpojumi</h2>
+                <div class="w-20 h-1 bg-blue-900 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Fizioterapija -->
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor font-bold">
+                            <path d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl mb-4">Fizioterapija</h3>
+                    <p class="text-slate-600 mb-6 italic">Specializēta rehabilitācija un stājas korekcija jātniekiem, lai uzlabotu līdzsvaru un kontaktu ar zirgu.</p>
+                    <ul class="text-sm text-slate-500 space-y-2">
+                        <li>• Biomehānikas analīze</li>
+                        <li>• Rehabilitācija pēc traumām</li>
+                        <li>• Stājas korekcijas vingrinājumi</li>
+                    </ul>
+                </div>
+
+                <!-- Ergox2 Segli -->
+                <div id="ergox2" class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6 text-amber-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl mb-4">Ergox2 of Sweden</h3>
+                    <p class="text-slate-600 mb-6 italic">Inovatīvi segli, kas izstrādāti, domājot par zirga un jātnieka brīvību un komfortu.</p>
+                    <a href="#" class="text-amber-700 font-semibold hover:underline">Uzzināt vairāk &rarr;</a>
+                </div>
+
+                <!-- Agador Trenzes -->
+                <div id="agador" class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 text-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.407 2.651 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.407-2.651-1M12 16c1.11 0 2.08.407 2.651 1" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl mb-4">Agador Trenzes</h3>
+                    <p class="text-slate-600 mb-6 italic">Augstākās kvalitātes trenzes maigam un precīzam kontaktam. Labsajūta zirga mutē.</p>
+                    <a href="#" class="text-slate-800 font-semibold hover:underline">Katalogam &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Izglītība un Lekcijas -->
+    <section id="izglitiba" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md">
+                            <h4 class="text-xl font-bold mb-2">Lekcijas</h4>
+                            <p class="text-sm text-slate-300">Teorētiskas zināšanas par biomehāniku.</p>
+                        </div>
+                        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md mt-8">
+                            <h4 class="text-xl font-bold mb-2">Semināri</h4>
+                            <p class="text-sm text-slate-300">Praktiskas nodarbības grupās vai individuāli.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-4xl mb-6">Izglītības pasākumi</h2>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        Mēs ticam, ka zināšanas ir panākumu atslēga. Tāpēc regulāri rīkojam lekcijas un izglītības pasākumus, lai dalītos pieredzē par zirgu un jātnieku veselību.
+                    </p>
+                    <button class="px-8 py-3 border border-white/30 rounded-full hover:bg-white hover:text-slate-900 transition">Kalendārs un Pieteikšanās</button>
+                </div>
+            </div>
+        </div>
+        <!-- Dekoratīvs fons -->
+        <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="80" cy="50" r="40" stroke="white" stroke-width="0.5" fill="none" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Kontakti -->
+    <section id="kontakti" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl mb-8 font-serif italic">Sāksim ceļu uz līdzsvaru kopā?</h2>
+            <div class="space-y-4 mb-12">
+                <p class="text-xl text-slate-700 font-light">SIA “Back in Balance fizioterapijas prakse”</p>
+                <p class="text-slate-500">Zvaniet mums: <a href="tel:+37120000000" class="hover:text-blue-600 font-semibold">+371 2X XXX XXX</a></p>
+                <p class="text-slate-500">Rakstiet: <a href="mailto:info@backinbalance.lv" class="hover:text-blue-600 font-semibold">info@backinbalance.lv</a></p>
+            </div>
+            
+            <form class="space-y-4 max-w-lg mx-auto bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                <input type="text" placeholder="Jūsu vārds" class="w-full px-6 py-3 rounded-xl border-slate-200 focus:border-blue-900 outline-none transition">
+                <input type="email" placeholder="E-pasts" class="w-full px-6 py-3 rounded-xl border-slate-200 focus:border-blue-900 outline-none transition">
+                <textarea placeholder="Ziņa" rows="4" class="w-full px-6 py-3 rounded-xl border-slate-200 focus:border-blue-900 outline-none transition"></textarea>
+                <button class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-950 transition">Nosūtīt pieteikumu</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+            <div class="mb-4 md:mb-0 uppercase tracking-widest font-semibold text-slate-500">Back in Balance</div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-slate-600 transition">Instagram</a>
+                <a href="#" class="hover:text-slate-600 transition">Facebook</a>
+            </div>
+            <div class="mt-4 md:mt-0">
+                &copy; 2024 SIA Back in Balance. Visas tiesības aizsargātas.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
